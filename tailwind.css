@@ -1,0 +1,84 @@
+/*
+Theme Name: SEPDEP Theme
+Theme URI: 
+Description: Tema creado para la pagina del SEPDEP
+Author: Rodrigo Silva Murillo
+Author URI: rodasdev.com
+Version: 1.0
+License: Licencia del tema
+License URI: 
+Tags: sepdep
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.container {
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 auto;
+  padding-left: 1rem ;
+  padding-right: 1rem ;
+}
+
+#menu-menu-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;;
+}
+
+#menu-menu-1 > li {
+  color: white;
+  font-size: 0.75rem;
+  text-transform: capitalize;
+}
+
+.grid-4-cols{
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, max(250px, 25%)), 1fr));
+  display: grid;
+}
+.grid-4-cols-with-gap{
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, max(190px, calc(25% - 10px))), 1fr));
+  gap: 10px;
+  display: grid;
+}
+.grid-3-cols-with-gap{
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, max(220px, calc(33.33% - 1rem))), 1fr));
+  gap: 1rem;
+  display: grid;
+}
+.grid-3-cols-with-gap-footer{
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, max(120px, calc(33.33% - 1rem))), 1fr));
+  gap: 1rem;
+  display: grid;
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    flex: 0 0 100%;
+    animation: 0.2s fadein ease-in forwards;
+}
+
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  } 
+  to {
+    opacity: 1;
+  }
+}
