@@ -3,7 +3,9 @@ jQuery(document).ready(function($) {
 
 
   slider($);
-  
+  $('.btn-menuburguer').on('click', function(){
+    $('.nav-mobile').toggle('flex')
+  })
 })
 
 function slider($) {

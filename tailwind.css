@@ -24,6 +24,113 @@ Tags: sepdep
 }
 
 #menu-menu-1 {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+#menu-menu-1 > li {
+    display: inline-block;
+    position: relative;
+    color: white;
+    font-size: 0.75rem;
+    text-transform: capitalize;
+    padding: 0.5rem;;
+
+}
+#menu-menu-1 > li:hover {
+  background: #161616;
+  transition: 0.2 all ease-in-out;
+}
+
+#menu-menu-1 > li > ul {
+  display: none;
+  
+}
+
+#menu-menu-1 > li:hover > ul {
+    display: flex;
+}
+
+.submenu {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  margin-top: 0rem;;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  @apply bg-primary-blue;
+}
+.submenu > li {
+  display: inline-block;
+  position: relative;
+  color: white;
+  font-size: 0.75rem;
+  text-transform: capitalize;
+  z-index: 100;
+  padding: 0.5rem;
+  @apply bg-primary-blue;
+  border-bottom: 0.8px solid grey;
+}
+.submenu > li:hover {
+  opacity: 0.9;
+  transition: 0.2s all ease; 
+}
+
+.menu-principal-mobile{
+  display: flex;
+  
+}
+
+#menu-menu-2 {
+  width: 100%;
+  display:  flex;
+  flex-direction: column;
+}
+
+#menu-menu-2 > li > a {
+    position: relative;
+    color: black;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    padding: 0.5rem;
+    width: 100%;
+    display: block;
+
+}
+#menu-menu-2 > li > a:hover {
+    font-weight: bold;
+     transition: 0.2s all ease;
+
+}
+#menu-menu-2 > li > ul{
+    position: relative;
+    color: black;
+    font-size: 0.75rem;
+    text-transform: capitalize;
+    padding: 0.5rem;;
+    border-bottom:1px solid grey;
+
+}
+#menu-menu-2 > li > ul > li{
+    position: relative;
+    color: black;
+    font-size: 0.75rem;
+    text-transform: capitalize;
+    padding: 0.5rem;;
+
+}
+#menu-menu-2 > li > ul > li:hover{
+     @apply bg-primary-blue;
+     color: white;
+     transition: 0.2s all ease;
+
+}
+/* #menu-menu-1 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,7 +142,7 @@ Tags: sepdep
   color: white;
   font-size: 0.75rem;
   text-transform: capitalize;
-}
+} */
 
 .grid-4-cols{
   grid-template-columns: repeat(auto-fill, minmax(min(100%, max(250px, 25%)), 1fr));

@@ -26,6 +26,46 @@ function sepdep_menu(){
 
 add_action('init', 'sepdep_menu');
 
+
+class Custom_Nav_Walker extends Walker_Nav_Menu {
+    // Agrega clases adicionales al elemento raíz del menú
+    function start_lvl( &$output, $depth = 0, $args = null ) {
+        if ( isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) {
+            $t = '';
+            $n = '';
+        } else {
+            $t = "\t";
+            $n = "\n";
+        }
+        $indent = str_repeat( $t, $depth );
+
+        // Añade clases adicionales al submenú
+        $classes = array( 'submenu' );
+        $class_names = join( ' ', apply_filters( 'nav_menu_submenu_css_class', $classes, $args, $depth ) );
+        $class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
+
+        // Construye el inicio del submenú
+        $output .= "{$n}{$indent}<ul$class_names>{$n}";
+    }
+
+    // Finaliza el submenú
+    function end_lvl( &$output, $depth = 0, $args = null ) {
+        if ( isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) {
+            $t = '';
+            $n = '';
+        } else {
+            $t = "\t";
+            $n = "\n";
+        }
+        $indent = str_repeat( $t, $depth );
+        $output .= "$indent</ul>{$n}";
+    }
+}
+
+
+
+
+
 function mytheme_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'mytheme_image' , array(
         'default'   => '',
